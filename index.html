@@ -1,7 +1,7 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Predictions – Deposit</title>
+  <title>توقعات الذكاء الاصطناعي – الإيداع</title>
   <link href="css/tailwind.min.css" rel="stylesheet">
   <style>
     .console-box {
@@ -13,6 +13,8 @@
       color: #00ff88;
       height: 250px;
       overflow-y: auto;
+      direction: ltr; /* Оставляем консоль слева направо для логов */
+      text-align: left;
     }
     .loading-screen {
       font-family: monospace;
@@ -34,101 +36,95 @@
 </head>
 <body class="bg-gray-900 text-white font-sans">
   <div id="loading" class="loading-screen">
-    <p>Loading... Please wait while we prepare your experience.</p>
+    <p>جاري التحميل... يرجى الانتظار بينما نجهز تجربتك. 🇲🇷</p>
   </div>
   <div id="mainContent" class="hidden-screen">
     <header class="w-full bg-gray-800 p-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-green-400">AI Predictions 1xBet</h1>
-      <nav class="space-x-4">
-        <a href="#how" class="hover:text-green-400">How it works</a>
-        <a href="#games" class="hover:text-green-400">Games</a>
-        <a href="#start" class="hover:text-green-400">Start</a>
+      <h1 class="text-xl font-bold text-green-400">توقعات الذكاء الاصطناعي 1xBet 🇲🇷</h1>
+      <nav class="space-x-4 space-x-reverse">
+        <a href="#how" class="hover:text-green-400">كيف يعمل</a>
+        <a href="#games" class="hover:text-green-400">الألعاب</a>
+        <a href="#start" class="hover:text-green-400">ابدأ</a>
       </nav>
     </header>
     <section class="min-h-screen flex flex-col items-center justify-center px-4 text-center">
       <h2 class="text-3xl md:text-5xl font-bold mb-6">
-        Earn real money with AI game predictions
+        اربح أموالاً حقيقية مع توقعات الألعاب بالذكاء الاصطناعي
       </h2>
       <div class="mb-4 text-lg font-semibold text-yellow-300">
-        👋 Welcome to the official service of <span class="text-green-400">Ahmad Rahman</span>!
+        👋 مرحبًا بك في الخدمة الرسمية لـ <span class="text-green-400">أحمد رحمان</span>!
       </div>
       <p class="max-w-xl mb-8 text-gray-300">
-        Join thousands of users profiting with our smart AI in Aviator, Mines and Penalty. 98% accuracy, real-time predictions and instant withdrawals!
+        انضم إلى آلاف المستخدمين الذين يربحون مع ذكائنا الاصطناعي الذكي في Aviator و Mines و Penalty. دقة 98%، توقعات فورية وسحب فوري!
       </p>
-      <!-- ID input for connection -->
-      <input id="userId" type="text" placeholder="Enter your 1xBet ID" class="bg-gray-700 text-white p-3 rounded-md mb-4">
-      <button id="connectButton" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl text-lg transition">Connect account</button>
-      <!-- Success message -->
+      <input id="userId" type="text" placeholder="أدخل معرف 1xBet الخاص بك" class="bg-gray-700 text-white p-3 rounded-md mb-4 text-center">
+      <button id="connectButton" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl text-lg transition">ربط الحساب</button>
       <div id="connectionSuccess" class="hidden text-green-400 font-bold mt-6">
-        <p>Account ID: <span id="accountIdDisplay">1234567890</span> successfully connected!</p>
-        <p>Status: Active | 100% prediction accuracy | AI algorithm analyzed</p>
-        <button id="getSignalButton" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition mt-4">Get signal</button>
+        <p>معرف الحساب: <span id="accountIdDisplay">160231313</span> تم الربط بنجاح!</p>
+        <p>الحالة: نشط | دقة التوقعات 100% | تم تحليل خوارزمية AI</p>
+        <button id="getSignalButton" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition mt-4">الحصول على إشارة</button>
       </div>
-      <!-- Error message for deposit + PROMOCODE block -->
       <div id="errorBox" class="hidden bg-red-600 p-6 rounded-xl max-w-md mx-auto mt-6">
-        <h2 class="text-xl font-bold mb-2">⚠️ Deposit not found</h2>
-        <p class="mb-4">It looks like your balance is empty. Please make a deposit of at least <strong>RM50 or more</strong> to unlock access to signals and start generating profit.</p>
+        <h2 class="text-xl font-bold mb-2">⚠️ لم يتم العثور على إيداع</h2>
+        <p class="mb-4">يبدو أن رصيدك فارغ. يرجى إيداع <strong>210 MRU أو أكثر</strong> لفتح الوصول إلى الإشارات والبدء في تحقيق الأرباح.</p>
+        <p class="mb-4 font-bold">إذا كان رصيدك أقل من 210 MRU، فلن يتمكن البرنامج من إضافة حسابك.</p>
         <a href="https://reffpa.com/L?tag=d_3290065m_97c_&site=3290065&ad=97&r=registration" target="_blank" id="depositButton" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg transition">
-          Deposit now at 1xBet
+          قم بالإيداع الآن في 1xBet
         </a>
-        <!-- Promo code -->
         <div class="mt-6 bg-red-800 text-white p-4 rounded-lg font-bold text-center">
-          <div class="mb-1 text-lg">Your promo code: <span class="bg-black p-1 rounded text-green-400">FARAH100</span></div>
-          <div>Remember to register <span class="underline">only</span> with this code for full access to all features!</div>
+          <div class="mb-1 text-lg">الرمز الترويجي الخاص بك: <span class="bg-black p-1 rounded text-green-400">MVR606</span></div>
+          <div>يجب عليك تسجيل حساب جديد باستخدام الرمز الترويجي <span class="underline text-yellow-300">MVR606</span></div>
         </div>
       </div>
     </section>
-    <!-- Winners -->
     <section class="bg-gray-800 py-12 px-6 text-center">
-      <h3 class="text-2xl font-bold text-green-400 mb-6">Today’s Winners (RM)</h3>
-      <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300">
-      <p>👤 User: 1218473422 – RM25,328</p>
-      <p>👤 User: 9912384741 – RM21,900</p>
-      <p>👤 User: 3099234822 – RM14,120</p>
-      <p>👤 User: 1187339121 – RM10,000</p>
-      <p>👤 User: 4412900113 – RM12,850</p>
-      <p>👤 User: 8283721091 – RM18,440</p>
-      <p>👤 User: 7751937742 – RM10,705</p>
-      <p>👤 User: 5554921811 – RM9,330</p>
-      <p>👤 User: 1983238742 – RM8,000</p>
-      <p>👤 User: 3377749301 – RM7,210</p>
+      <h3 class="text-2xl font-bold text-green-400 mb-6">الفائزون اليوم (MRU)</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300" dir="ltr">
+        <p>🇲🇷 👤 User: 1218473422 – 25,328 MRU</p>
+        <p>🇲🇷 👤 User: 9912384741 – 21,900 MRU</p>
+        <p>🇲🇷 👤 User: 3099234822 – 14,120 MRU</p>
+        <p>🇲🇷 👤 User: 1187339121 – 10,000 MRU</p>
+        <p>🇲🇷 👤 User: 4412900113 – 12,850 MRU</p>
+        <p>🇲🇷 👤 User: 8283721091 – 18,440 MRU</p>
+        <p>🇲🇷 👤 User: 7751937742 – 10,705 MRU</p>
+        <p>🇲🇷 👤 User: 5554921811 – 9,330 MRU</p>
+        <p>🇲🇷 👤 User: 1983238742 – 8,000 MRU</p>
+        <p>🇲🇷 👤 User: 3377749301 – 7,210 MRU</p>
       </div>
     </section>
-    <!-- Supported games -->
     <section id="games" class="bg-gray-800 py-12 px-6 text-center">
-      <h3 class="text-2xl font-bold text-green-400 mb-6">Supported Games</h3>
+      <h3 class="text-2xl font-bold text-green-400 mb-6">الألعاب المدعومة</h3>
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
           <h4 class="text-xl font-bold mb-2">🎮 Aviator</h4>
-          <p class="text-gray-300">Predict when to cash out before the plane takes off. Our AI detects real-time patterns.</p>
+          <p class="text-gray-300">توقع موعد سحب الأموال قبل إقلاع الطائرة. يكتشف ذكاؤنا الاصطناعي الأنماط في الوقت الفعلي.</p>
         </div>
         <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
           <h4 class="text-xl font-bold mb-2">💣 Mines</h4>
-          <p class="text-gray-300">Avoid bombs, take your profit. Our system finds low-risk paths for maximum earnings.</p>
+          <p class="text-gray-300">تجنب القنابل وخذ أرباحك. يجد نظامنا مسارات منخفضة المخاطر لتحقيق أقصى قدر من الأرباح.</p>
         </div>
         <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
           <h4 class="text-xl font-bold mb-2">🥅 Penalty</h4>
-          <p class="text-gray-300">Know where to shoot or dive. Beat the goalkeeper with data-driven predictions.</p>
+          <p class="text-gray-300">اعرف أين تسدد. اهزم حارس المرمى بتوقعات مبنية على البيانات.</p>
         </div>
       </div>
     </section>
-    <!-- How it works -->
     <section id="how" class="bg-gray-900 py-12 px-6 text-center">
-      <h3 class="text-2xl font-bold text-green-400 mb-6">How it works</h3>
+      <h3 class="text-2xl font-bold text-green-400 mb-6">كيف يعمل</h3>
       <div class="max-w-3xl mx-auto space-y-4 text-gray-300">
-        <p>📡 Our AI analyzes live and historical game data 24/7.</p>
-        <p>💡 Identifies patterns that enable consistent profits.</p>
-        <p>📲 You receive trusted real-time signals directly to your device.</p>
+        <p>📡 يقوم ذكاؤنا الاصطناعي بتحليل بيانات اللعبة المباشرة والتاريخية 24/7.</p>
+        <p>💡 يحدد الأنماط التي تتيح تحقيق أرباح مستمرة.</p>
+        <p>📲 تتلقى إشارات موثوقة في الوقت الفعلي مباشرة على جهازك.</p>
       </div>
     </section>
     <section class="bg-black py-12 px-6 text-center">
-      <h3 class="text-xl font-bold text-green-400 mb-4">[ Console – Monitoring log ]</h3>
-      <div class="console-box max-w-3xl mx-auto text-left" id="console">
+      <h3 class="text-xl font-bold text-green-400 mb-4">[ وحدة التحكم – سجل المراقبة ]</h3>
+      <div class="console-box max-w-3xl mx-auto" id="console">
         <p>[INFO] Prediction service active ✅</p>
       </div>
     </section>
     <footer class="text-center text-gray-500 text-sm py-6">
-      © 2025 AI Predictions. Not affiliated with 1xBet. Use responsibly.
+      © 2025 توقعات الذكاء الاصطناعي. غير تابع لـ 1xBet. استخدمه بمسؤولية.
     </footer>
   </div>
   <script>
@@ -150,6 +146,4 @@
       document.getElementById("errorBox").classList.remove("hidden");
     });
   </script>
-
-
 </body></html>
