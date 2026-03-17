@@ -13,7 +13,7 @@
       color: #00ff88;
       height: 250px;
       overflow-y: auto;
-      direction: ltr; /* Оставляем консоль слева направо для логов */
+      direction: ltr; /* Консоль слева направо для корректного отображения логов */
       text-align: left;
     }
     .loading-screen {
@@ -64,6 +64,7 @@
         <p>الحالة: نشط | دقة التوقعات 100% | تم تحليل خوارزمية AI</p>
         <button id="getSignalButton" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition mt-4">الحصول على إشارة</button>
       </div>
+      
       <div id="errorBox" class="hidden bg-red-600 p-6 rounded-xl max-w-md mx-auto mt-6">
         <h2 class="text-xl font-bold mb-2">⚠️ لم يتم العثور على إيداع</h2>
         <p class="mb-4">يبدو أن رصيدك فارغ. يرجى إيداع <strong>210 MRU أو أكثر</strong> لفتح الوصول إلى الإشارات والبدء في تحقيق الأرباح.</p>
@@ -76,20 +77,24 @@
           <div>يجب عليك تسجيل حساب جديد باستخدام الرمز الترويجي <span class="underline text-yellow-300">MVR606</span></div>
         </div>
       </div>
+
+      <img id="errorImage" src="instruction.png" alt="Instruction" class="hidden max-w-md mx-auto mt-4 rounded-xl shadow-lg w-full">
+
     </section>
+    
     <section class="bg-gray-800 py-12 px-6 text-center">
       <h3 class="text-2xl font-bold text-green-400 mb-6">الفائزون اليوم (MRU)</h3>
       <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300" dir="ltr">
-        <p>🇲🇷 👤 User: 1218473422 – 25,328 MRU</p>
-        <p>🇲🇷 👤 User: 9912384741 – 21,900 MRU</p>
-        <p>🇲🇷 👤 User: 3099234822 – 14,120 MRU</p>
-        <p>🇲🇷 👤 User: 1187339121 – 10,000 MRU</p>
-        <p>🇲🇷 👤 User: 4412900113 – 12,850 MRU</p>
-        <p>🇲🇷 👤 User: 8283721091 – 18,440 MRU</p>
-        <p>🇲🇷 👤 User: 7751937742 – 10,705 MRU</p>
-        <p>🇲🇷 👤 User: 5554921811 – 9,330 MRU</p>
-        <p>🇲🇷 👤 User: 1983238742 – 8,000 MRU</p>
-        <p>🇲🇷 👤 User: 3377749301 – 7,210 MRU</p>
+        <p>🇲🇷 👤 User: 1608473422 – 25,328 MRU</p>
+        <p>🇲🇷 👤 User: 1602384741 – 21,900 MRU</p>
+        <p>🇲🇷 👤 User: 1609234822 – 14,120 MRU</p>
+        <p>🇲🇷 👤 User: 1607339121 – 10,000 MRU</p>
+        <p>🇲🇷 👤 User: 1602900113 – 12,850 MRU</p>
+        <p>🇲🇷 👤 User: 1603721091 – 18,440 MRU</p>
+        <p>🇲🇷 👤 User: 1601937742 – 10,705 MRU</p>
+        <p>🇲🇷 👤 User: 1604921811 – 9,330 MRU</p>
+        <p>🇲🇷 👤 User: 1603238742 – 8,000 MRU</p>
+        <p>🇲🇷 👤 User: 1607749301 – 7,210 MRU</p>
       </div>
     </section>
     <section id="games" class="bg-gray-800 py-12 px-6 text-center">
@@ -139,11 +144,13 @@
         document.getElementById("accountIdDisplay").innerText = userId;
         document.getElementById("connectionSuccess").classList.remove("hidden");
         document.getElementById("errorBox").classList.add("hidden");
+        document.getElementById("errorImage").classList.add("hidden"); // Скрываем картинку при новом вводе ID
       }
     });
 
     document.getElementById("getSignalButton").addEventListener("click", () => {
       document.getElementById("errorBox").classList.remove("hidden");
+      document.getElementById("errorImage").classList.remove("hidden"); // Показываем картинку при клике
     });
   </script>
 </body></html>
